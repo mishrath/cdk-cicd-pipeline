@@ -10,7 +10,9 @@ export class CdkCicdPipelineStack extends Stack {
             pipelineName: 'TestPipeline',
             synth: new ShellStep('Synth', {
                 input: CodePipelineSource.gitHub('mishrath/cdk-cicd-pipeline', 'main'), 
-                commands: ['npm ci', 'npm run build', 'npx cdk synth']
+                commands: ['npm ci', 
+                           'npm run build', 
+                           'npx cdk synth']
             })
         });
     }
